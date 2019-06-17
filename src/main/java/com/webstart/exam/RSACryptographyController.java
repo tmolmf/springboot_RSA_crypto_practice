@@ -23,8 +23,8 @@ public class RSACryptographyController {
     private static String RSA_INSTANCE = "RSA"; // rsa transformation
 
 
-	@RequestMapping(value="/RSA")  
-	public ModelAndView root(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value="/RSA")
+	public ModelAndView RSAroot(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// RSA 키 생성
         initRsa(request);
  
@@ -55,7 +55,8 @@ public class RSACryptographyController {
  
         // 개인키 삭제
         //session.removeAttribute(RSACryptographyController.RSA_WEB_KEY);
-        session.setAttribute("login", true);
+        session.setAttribute("login", userId);
+        session.setMaxInactiveInterval(5);
         // 로그인 처리
         /*
           
@@ -64,7 +65,7 @@ public class RSACryptographyController {
          */
  
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("rootview");
+        mav.setViewName("redirect:/");
         return mav;
     }
 	

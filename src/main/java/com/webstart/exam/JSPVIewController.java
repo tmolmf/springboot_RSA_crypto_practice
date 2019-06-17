@@ -7,11 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class JSPVIewController { 
+public class JSPVIewController {
+	
 	@RequestMapping(value="/")  
 	public String root(HttpServletRequest request) {
         HttpSession session = request.getSession();
 		System.out.println("login? "+session.getAttribute("login")); 
+		if(session.getAttribute("login")==null)
+		{
+			return "redirect:RSA";
+			}
         return "rootview";          // 실제 호출될 /WEB-INF/jsp/rootview.jsp       
     }
 	

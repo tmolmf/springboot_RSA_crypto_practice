@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class JSPVIewController {
+public class JSPVIewController { 
 	@RequestMapping(value="/")  
 	public String root(HttpServletRequest request) {
         HttpSession session = request.getSession();

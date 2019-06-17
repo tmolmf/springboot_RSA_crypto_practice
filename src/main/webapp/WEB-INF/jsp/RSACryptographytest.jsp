@@ -38,7 +38,7 @@
         $("#USER_ID").val(rsa.encrypt(id.val()));
         $("#USER_PW").val(rsa.encrypt(pw.val()));
         
-        setCookie("USER_ID", id.val(), 1);
+        //setCookie("USER_ID", id.val(), 1);
         
         id.val("");
         pw.val("");

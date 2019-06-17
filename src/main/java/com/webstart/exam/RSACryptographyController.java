@@ -55,7 +55,7 @@ public class RSACryptographyController {
  
         // 개인키 삭제
         //session.removeAttribute(RSACryptographyController.RSA_WEB_KEY);
- 
+        session.setAttribute("login", true);
         // 로그인 처리
         /*
           

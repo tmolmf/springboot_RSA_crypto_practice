@@ -1,6 +1,7 @@
 package com.webstart.exam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class JSPVIewController {
 	@RequestMapping(value="/")  
-	public String root() {
+	public String root(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+		System.out.println("login? "+session.getAttribute("login")); 
         return "rootview";          // 실제 호출될 /WEB-INF/jsp/rootview.jsp       
     }
 	
